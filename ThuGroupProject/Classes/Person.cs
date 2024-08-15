@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ThuGroupProject.Classes
 {
+
     public class Person
     {
         #region Fields
@@ -31,6 +32,9 @@ namespace ThuGroupProject.Classes
 
 
         #region Constructors
+        /// <summary>
+        /// constructor
+        /// </summary>
         public Person()
         {
             _Name = "New Horaizons";
@@ -41,7 +45,16 @@ namespace ThuGroupProject.Classes
             _IdNumber = "12345";
             _Gender = GenderEnum.Male;
         }
-
+        /// <summary>
+        /// constructor with parameters
+        /// </summary>
+        /// <param name="name">Enter Person Name</param>
+        /// <param name="dob"></param>
+        /// <param name="city"></param>
+        /// <param name="address"></param>
+        /// <param name="phoneNumber"></param>
+        /// <param name="idNumber"></param>
+        /// <param name="gender"></param>
         public Person(string name, DateTime dob, string city, string address, string phoneNumber, string idNumber, GenderEnum gender)
         {
            
@@ -67,6 +80,10 @@ namespace ThuGroupProject.Classes
         #endregion
 
         #region Methods
+        /// <summary>
+        /// To get person name
+        /// </summary>
+        /// <returns> Person Name</returns>
         public string ShowName()
         {
             return _Name;
