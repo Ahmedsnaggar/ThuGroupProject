@@ -5,12 +5,13 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ThuGroupProject.Classes
+namespace ThuGroupProject.Classes.PersonsFolder
 {
 
     public class Person
     {
         #region Fields
+        private int _id;
         private string _Name;
         private DateTime _DOB;
         private string _City;
@@ -21,6 +22,7 @@ namespace ThuGroupProject.Classes
         #endregion
 
         #region Properties
+        public int id { get { return _id; } set { _id = value; } }
         public string Name { get { return _Name; } set { _Name = value; } }
         public DateTime DOB { get { return _DOB; } set { _DOB = value; } }
         public string City { get { return _City; } set { _City = value; } }
@@ -37,6 +39,7 @@ namespace ThuGroupProject.Classes
         /// </summary>
         public Person()
         {
+            _id = 0;
             _Name = "New Horaizons";
             _DOB = new DateTime(2000, 10, 5);
             _City = "Cairo";
@@ -57,7 +60,7 @@ namespace ThuGroupProject.Classes
         /// <param name="gender"></param>
         public Person(string name, DateTime dob, string city, string address, string phoneNumber, string idNumber, GenderEnum gender)
         {
-           
+
             _Name = name;
             _DOB = dob;
             _City = city;
@@ -71,7 +74,7 @@ namespace ThuGroupProject.Classes
         {
             _Name = person.Name;
             _DOB = person.DOB;
-            _City= person.City;
+            _City = person.City;
             _Address = person.Address;
             _PhoneNumber = person.PhoneNumber;
             _IdNumber = person.IdNumber;
@@ -92,6 +95,11 @@ namespace ThuGroupProject.Classes
         public static int Calc()
         {
             return 50;
+        }
+
+        public virtual string Welcome()
+        {
+            return "Welcome, Person";
         }
         #endregion
     }
